@@ -148,7 +148,9 @@ map <Leader>? :Helptags<CR>
 if has("gui_running")
     set cursorline                  "Highlight background of current line
     "autocmd VimEnter * TagbarOpen
-	colorscheme github
+	colorscheme desert
+	"colorscheme github
+	"colorscheme Mustang             "This theme works great in 256 colors
 	"set background=light
 
     " Show tabs and newline characters with ,s
@@ -166,6 +168,7 @@ if has("gui_running")
 else
     set t_Co=256
     colorscheme Mustang             "This theme works great in 256 colors
+    "colorscheme desert             "This theme works great in 256 colors
 	set mouse=a						"This allows mouse scrolling in terminal, and selection of text
 endif
 
@@ -184,3 +187,9 @@ endif
 if filereadable($HOME.'/.vimrc_local')
     source $HOME/.vimrc_local
 endif
+
+" overwrite setting 
+" Visual Options
+:set wrap
+:set linebreak
+:set nolist  " list disables linebreak
