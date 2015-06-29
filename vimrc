@@ -34,6 +34,9 @@ autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 au BufWritePost *.coffee silent make!
 autocmd QuickFixCmdPost * nested cwindow | redraw!
 
+"------  Special Xdebug Behavior ------
+au BufNewFile, BufRead *.xt setf xt
+
 "------  Searching  ------
 set incsearch               "Search while typing
 set ignorecase              "Case Insensitive Searching
@@ -193,3 +196,6 @@ endif
 :set wrap
 :set linebreak
 :set nolist  " list disables linebreak
+
+" Runtime syntax check for PHP 
+map <Leader>b :!php -l %<CR>
