@@ -26,7 +26,7 @@ filetype plugin on          "Needed for snipMate
 set autoindent              "Autoindent
 "set expandtab               "Use spaces instead of tabs
 "Ignore these files when completing names
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,node_modules/*
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,node_modules/*,*.min.js,*.map
 
 "------  Special Coffee Behavior ------
 au BufNewFile,BufReadPost *.coffee set shiftwidth=2 softtabstop=2 expandtab
@@ -108,6 +108,9 @@ nnoremap <Leader>wv <C-w>v<C-w>l
 nnoremap <Leader>ws <C-w>s
 nnoremap <Leader>ww <C-w><C-w>
 
+"search for visually selected text. http://vim.wikia.com/wiki/Search_for_visually_selected_text
+vnoremap // y/<C-R>"<CR>
+
 " Opens an edit command with the path of the currently edited file filled in Normal mode: <Leader>ee
 map <Leader>ee :e <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -177,7 +180,7 @@ endif
 
 if has("gui_macvim") "Use Experimental Renderer option must be enabled for transparency
 	"set guifont=Monaco:h14
-	set guifont=Monaco:h12
+	set guifont=Monaco:h9
 	"set noantialias
 	"set transparency=15
     " Swipe to move between bufers :D
@@ -196,6 +199,3 @@ endif
 :set wrap
 :set linebreak
 :set nolist  " list disables linebreak
-
-" Runtime syntax check for PHP 
-map <Leader>b :!php -l %<CR>
